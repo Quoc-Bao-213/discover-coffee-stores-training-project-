@@ -8,13 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        gradient: "url('/static/background.png')",
+      },
       colors: {
         purple: {
           951: "rgba(79, 70, 229, 1)",
         },
         gray: {
-          951: "hsla(0, 0%, 100%, 0.4)",
-          952: "#373b64",
+          951: 'hsla(0, 0%, 100%, 0.4)',
+          952: '#373b64',
         },
       }
     },
