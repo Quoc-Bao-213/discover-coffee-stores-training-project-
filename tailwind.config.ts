@@ -8,10 +8,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['var(--font-ibmplexsans)'],
-        inter: ['var(--font-inter)'],
-      },
       backgroundImage: {
         gradient: "url('/static/background.png')",
       },
@@ -20,10 +16,11 @@ const config: Config = {
           951: "rgba(79, 70, 229, 1)",
         },
         gray: {
-          951: 'hsla(0, 0%, 100%, 0.4)',
-          952: '#373b64',
+          950: "hsla(0, 0%, 100%, 0.7);",
+          951: "hsla(0, 0%, 100%, 0.4);",
+          952: "#373b64",
         },
-      }
+      },
     },
   },
   plugins: [],
