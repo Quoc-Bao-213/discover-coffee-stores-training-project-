@@ -1,8 +1,16 @@
 import Banner from "@/components/banner.client";
 import Card from "@/components/card.server";
+import { fetchCoffeeStores } from "@/lib/coffee-stores";
+import { CoffeeStoreType } from "@/types";
 
-export default function Home() {
-  const coffeeStoreId = "dark-horse-coffee";
+async function getData() {
+  // Mapbox API
+  return await fetchCoffeeStores();
+}
+
+export default async function Home() {
+  const coffeeStores = await getData();
+
   return (
     <div className="mb-56">
       <main className="mx-auto mt-10 max-w-6xl px-4">
