@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-async function getData(id: string) {
+async function getData(id: string, queryId: string) {
   // Mapbox API
-  return await fetchCoffeeStore(id);
+  return await fetchCoffeeStore(id, queryId);
 }
 
 export async function generateStaticParams() {
@@ -17,12 +17,16 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page(props: { params: { id: string } }) {
+export default async function Page(props: {
+  params: { id: string };
+  searchParams: { id: string };
+}) {
   const {
     params: { id },
+    searchParams: { id: queryId },
   } = props;
 
-  const coffeeStore = await getData(id);
+  const coffeeStore = await getData(id, queryId);
   const { name = "", address = "", imgUrl = "" } = coffeeStore;
 
   return (
