@@ -27,6 +27,7 @@ export default function Card({ name, imgUrl, href }: CardType) {
             alt={"Coffee Store Image"}
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8/+ZNPQAIoQM4xp5zkgAAAABJRU5ErkJggg=="
             placeholder="blur"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
           />
         </div>
       </div>

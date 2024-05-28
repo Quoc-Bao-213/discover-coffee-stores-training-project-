@@ -1,11 +1,12 @@
-import Banner from "@/components/banner.client";
 import Card from "@/components/card.server";
+import NearbyCoffeeStores from "@/components/nearby-coffee-stores.client";
 import { fetchCoffeeStores } from "@/lib/coffee-stores";
 import { CoffeeStoreType } from "@/types";
 
 async function getData() {
-  // Mapbox API
-  return await fetchCoffeeStores();
+  //mapbox api
+  const TORONTO_LONG_LAT = "106.67551392489568%2C10.795680556791892";
+  return await fetchCoffeeStores(TORONTO_LONG_LAT, 6);
 }
 
 export default async function Home() {
@@ -14,7 +15,7 @@ export default async function Home() {
   return (
     <div className="mb-56">
       <main className="mx-auto mt-10 max-w-6xl px-4">
-        <Banner />
+        <NearbyCoffeeStores />
 
         <div className="mt-20">
           <h2 className="mt-8 pb-8 text-4xl font-bold text-white">
